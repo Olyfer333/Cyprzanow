@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver Sylwester</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .fullscreen-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .fullscreen-image img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body style="background-color: #38ccae;">
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+			<li><a href="janowice.html">Janowice</a></li>
+			<li><a href="cyprzanow.html">Cyprzanów</a></li>
+            <li><a href="kosciol.html">Kościół</a></li>
+		    <li><a href="cmentarze.html">Cmentarze</a></li>
+            <li><a href="ciekawostki.html">Ciekawostki</a></li>
+            <li><a href="lokalizacja.html">Lokalizacja</a></li>
+		    <li><a href="infografika.html">Infografika</a></li>
+		    <li><a href="galeria.html">Galeria</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+   <h1> Galeria </h1>
+   <style>
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    #modal-content {
+        margin: auto;
+        display: block;
+        max-width: 700px;
+    }
+
+    #modal img {
+        width: 100%;
+        height: auto;
+    }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body background="wyjazd.jpg">
+
+<div class="gallery">
+    <img src="1.jpg" alt="Obraz 1" onclick="openModal('1.jpg')">
+    <img src="kosciol.jpg" alt="Obraz 2" onclick="openModal('kosciol.jpg')">
+    <img src="rynek2.jpg" alt="Obraz 3" onclick="openModal('rynek2.jpg')">
+	<img src="budowa.jpg" alt="Obraz 3" onclick="openModal('budowa.jpg')">
+	<img src="stary.jpg" alt="Obraz 3" onclick="openModal('stary.jpg')">
+	<img src="nowy1.jpg" alt="Obraz 3" onclick="openModal('nowy1.jpg')">
+	<img src="lokalizacja.png" alt="Obraz 3" onclick="openModal('lokalizacja.png')">
+	<img src="mlyn.jpg" alt="Obraz 3" onclick="openModal('mlyn.jpg')">
+	<img src="boisko.jpg" alt="Obraz 3" onclick="openModal('boisko.jpg')">
+	<img src="wyjazd.jpg" alt="Obraz 3" onclick="openModal('wyjazd.jpg')">
+</div>
+
+<div id="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modal-content">
+</div>
+
+<script>
+    function openModal(imageUrl) {
+        document.getElementById('modal').style.display = 'block';
+        document.getElementById('modal-content').src = imageUrl;
+    }
+
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+</script>
+    </div>
+      <style>
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+        }
+        .clickable-image {
+            width: 150px; 
+            height: 150px; 
+            cursor: pointer;
+        }
+        .fullscreen-image {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); 
+        }
+        .fullscreen-image img {
+            max-width: 80%; 
+            max-height: 80%; 
+        }
+    </style>
+</head>
+<body>
+<footer>
+    &copy; 2024 Oliver Sylwester
+</body>
+</html>
+</body>
+</html>

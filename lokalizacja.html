@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver Sylwester</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .fullscreen-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .fullscreen-image img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body background="wyjazd.jpg">
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+			<li><a href="janowice.html">Janowice</a></li>
+			<li><a href="cyprzanow.html">Cyprzanów</a></li>
+            <li><a href="kosciol.html">Kościół</a></li>
+		    <li><a href="cmentarze.html">Cmentarze</a></li>
+            <li><a href="ciekawostki.html">Ciekawostki</a></li>
+            <li><a href="lokalizacja.html">Lokalizacja</a></li>
+		    <li><a href="infografika.html">Infografika</a></li>
+		    <li><a href="galeria.html">Galeria</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+    <h1 >Cyprzanów - lokalizacja</h1>
+	<p>Cyprzanów mieści się 8km od centrum Raciborza, 7,8km od centrum Kietrza, 68,5 km od centrum Katowic oraz 3,5km do granicy z Czechami</p>
+	<img src="lokalizacja.png" alt="lokalizacja">
+    </div>
+      <style>
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+        }
+        .clickable-image {
+            width: 150px; 
+            height: 150px; 
+            cursor: pointer;
+        }
+        .fullscreen-image {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); 
+        }
+        .fullscreen-image img {
+            max-width: 80%; 
+            max-height: 80%; 
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="lokalizacja.png" alt="Zdjęcie 1" class="clickable-image">
+    </div>
+    
+    <div class="fullscreen-image" id="fullscreenImage">
+        <img src="" alt="Powiększone zdjęcie">
+    </div>
+    <script>
+        
+        const images = document.querySelectorAll('.clickable-image');
+
+        
+        const fullscreenImage = document.getElementById('fullscreenImage');
+
+        
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+               
+                fullscreenImage.querySelector('img').src = this.src;
+               
+                fullscreenImage.style.display = 'flex';
+            });
+        });
+
+        
+        fullscreenImage.addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+    </script>
+<footer>
+    &copy; 2024 Oliver Sylwester
+</body>
+</html>
+</body>
+</html>

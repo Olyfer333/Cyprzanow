@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver Sylwester</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .fullscreen-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .fullscreen-image img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body background="lokalizacja.png">
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+			<li><a href="janowice.html">Janowice</a></li>
+			<li><a href="cyprzanow.html">Cyprzanów</a></li>
+            <li><a href="kosciol.html">Kościół</a></li>
+		    <li><a href="cmentarze.html">Cmentarze</a></li>
+            <li><a href="ciekawostki.html">Ciekawostki</a></li>
+            <li><a href="lokalizacja.html">Lokalizacja</a></li>
+		    <li><a href="infografika.html">Infografika</a></li>
+		    <li><a href="galeria.html">Galeria</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+    <h1> Stary cmentarz </h1>
+	<p> Pierwotnie w parafii Janowice, tak jak to bylo w zwyczaju prawie wszedzie, miejscem</p>
+    <p>pochowku martych byl plac przykoscielny. Dopiero póznie utworzono nowy cmentarz, preznaczaja na ten cel czesc pola nalezacego do proboszcza. W parafii Janowice</p>
+    <p>znazniejszych parafian chowano wewnatrz kosciola. Dnia 16 lutego 1684 roku pochowano tam wielkiego fundatora kosciola- Walentego Zarzina. Oryginat dokumentu fun-dacji janowickiego mynarza Walentego Zarzina znajduje sie w archiwum w Opawie.</p>
+	<br>
+	<br>
+	<h1> Nowy cmentarz </h1>
+	<p>Ksiądz Mohr Założył nowy cmentarz o powierzchni jednej morgi 25 arów jest to obecny Kyrhov znajdujący się naprzeciw kościoła</p>
+	<p>Do tego czasu pogrzebano w kościele i wokół niego dnia 21 lipca 1861 roku nowy cmentarz został poświęcony w połowie XVIII wieku była w Janowicach kaplica pogrzebowa Beinhaus.</p>
+	<p>jednak w dokumentach z 19 wieku nic ani nie słychać być może spaliła się razem ze starym kościołem</p>
+	<img src="stary.jpg" alt="stary cmentarz">
+	<br>
+	<br>
+	<h1> II nowy cmentarz </h1>
+	<p> Wybudowano również II cmentarz w 1953 roku lecz więcej informacji na jego temat nie posiadamy </p>
+	<img src="nowy1.jpg" alt="Nowy cmentarz">
+	
+    </div>
+      <style>
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+        }
+        .clickable-image {
+            width: 150px; 
+            height: 150px; 
+            cursor: pointer;
+        }
+        .fullscreen-image {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); 
+        }
+        .fullscreen-image img {
+            max-width: 80%; 
+            max-height: 80%; 
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="lokalizacja.png" alt="Zdjęcie 1" class="clickable-image">
+        
+    </div>
+    <!-- Powiększone zdjęcie -->
+    <div class="fullscreen-image" id="fullscreenImage">
+        <img src="" alt="Powiększone zdjęcie">
+    </div>
+    <script>
+        
+        const images = document.querySelectorAll('.clickable-image');
+
+        
+        const fullscreenImage = document.getElementById('fullscreenImage');
+
+        
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                // Ustaw src powiększonego zdjęcia na kliknięte zdjęcie
+                fullscreenImage.querySelector('img').src = this.src;
+                // Pokaż div powiększonego zdjęcia
+                fullscreenImage.style.display = 'flex';
+            });
+        });
+
+        
+        fullscreenImage.addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+    </script>
+<footer>
+        &copy; 2024 Oliver Sylwester
+</body>
+</html>
+</body>
+</html>
